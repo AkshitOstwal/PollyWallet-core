@@ -1,16 +1,42 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:polly_wallet/constants.dart';
 import 'package:polly_wallet/screens/importMnemonic.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+
+import 'package:polly_wallet/screens/splash.dart';
+import 'package:polly_wallet/utils/box.dart';
+
 
 void main() {
-  Hive.initFlutter("hive");
-  runApp(MyApp());
+
+  runApp(PollyWallet());
 }
 
-class MyApp extends StatelessWidget {
+class PollyWallet extends StatefulWidget {
   // This widget is the root of your application.
+  @override
+  _PollyWalletState createState() => _PollyWalletState();
+}
+
+class _PollyWalletState extends State<PollyWallet> {
+  Widget current = Splash();
+  @override
+  void initState() {
+    BoxUtils.initializeHive().then((value){
+      BoxUtils.checkLogin().then((bool status){
+        if(status){
+          setState(() {
+            current = Splash();
+          });
+        }else{
+          setState(() {
+            current = ImportMnemonic();
+          });
+        }
+      });
+    });
+
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,7 +49,7 @@ class MyApp extends StatelessWidget {
       routes: {
         importMnemonic : (context) => ImportMnemonic()
       },
-      home: ImportMnemonic(),
+      home: current,
     );
   }
 }
