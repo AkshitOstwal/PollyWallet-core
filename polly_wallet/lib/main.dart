@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:polly_wallet/constants.dart';
+import 'package:polly_wallet/screens/home.dart';
 import 'package:polly_wallet/screens/importMnemonic.dart';
 
 import 'package:polly_wallet/screens/splash.dart';
@@ -18,6 +20,7 @@ class PollyWallet extends StatefulWidget {
 }
 
 class _PollyWalletState extends State<PollyWallet> {
+
   Widget current = Splash();
   @override
   void initState() {
@@ -39,6 +42,14 @@ class _PollyWalletState extends State<PollyWallet> {
   }
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        systemNavigationBarColor: offWhite, // navigation bar color
+        statusBarColor: primaryColor,
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.light,
+        systemNavigationBarDividerColor: offWhite,
+        systemNavigationBarIconBrightness: Brightness.dark// status bar color
+    ));
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -49,7 +60,7 @@ class _PollyWalletState extends State<PollyWallet> {
       routes: {
         importMnemonic : (context) => ImportMnemonic()
       },
-      home: current,
+      home: Home(),
     );
   }
 }
