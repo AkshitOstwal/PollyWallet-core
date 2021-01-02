@@ -7,9 +7,7 @@ import 'package:polly_wallet/screens/importMnemonic.dart';
 import 'package:polly_wallet/screens/splash.dart';
 import 'package:polly_wallet/utils/box.dart';
 
-
 void main() {
-
   runApp(PollyWallet());
 }
 
@@ -20,17 +18,16 @@ class PollyWallet extends StatefulWidget {
 }
 
 class _PollyWalletState extends State<PollyWallet> {
-
   Widget current = Splash();
   @override
   void initState() {
-    BoxUtils.initializeHive().then((value){
-      BoxUtils.checkLogin().then((bool status){
-        if(status){
+    BoxUtils.initializeHive().then((value) {
+      BoxUtils.checkLogin().then((bool status) {
+        if (status) {
           setState(() {
             current = Splash();
           });
-        }else{
+        } else {
           setState(() {
             current = ImportMnemonic();
           });
@@ -40,6 +37,7 @@ class _PollyWalletState extends State<PollyWallet> {
 
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -48,8 +46,8 @@ class _PollyWalletState extends State<PollyWallet> {
         statusBarIconBrightness: Brightness.light,
         statusBarBrightness: Brightness.light,
         systemNavigationBarDividerColor: offWhite,
-        systemNavigationBarIconBrightness: Brightness.dark// status bar color
-    ));
+        systemNavigationBarIconBrightness: Brightness.dark // status bar color
+        ));
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -57,11 +55,8 @@ class _PollyWalletState extends State<PollyWallet> {
         accentColor: primaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      routes: {
-        importMnemonic : (context) => ImportMnemonic()
-      },
+      routes: {importMnemonic: (context) => ImportMnemonic()},
       home: Home(),
     );
   }
 }
-

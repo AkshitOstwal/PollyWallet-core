@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:polly_wallet/constants.dart';
 import 'package:polly_wallet/utils/hexConverter.dart';
-class Login extends StatefulWidget{
+
+class Login extends StatefulWidget {
   LoginState createState() => LoginState();
 }
-class LoginState extends State<Login>{
+
+class LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -15,10 +17,12 @@ class LoginState extends State<Login>{
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("P", style: TextStyle(fontSize: 55),),
-
+            Text(
+              "P",
+              style: TextStyle(fontSize: 55),
+            ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(8.0,50,8,8),
+              padding: const EdgeInsets.fromLTRB(8.0, 50, 8, 8),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -26,11 +30,15 @@ class LoginState extends State<Login>{
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.create_new_folder_outlined, color: secondaryColor,size: 60),
+                      Icon(Icons.create_new_folder_outlined,
+                          color: secondaryColor, size: 60),
                       RaisedButton(
                         color: secondaryColor,
-                        onPressed: (){},
-                        child: Text("Import Mnemonic", style:TextStyle(color: Colors.white, )),
+                        onPressed: () {},
+                        child: Text("Import Mnemonic",
+                            style: TextStyle(
+                              color: Colors.white,
+                            )),
                       )
                     ],
                   ),
@@ -38,7 +46,7 @@ class LoginState extends State<Login>{
                     padding: const EdgeInsets.all(20.0),
                     child: SizedBox(
                       width: 5,
-                      height: MediaQuery.of(context).size.height*0.1,
+                      height: MediaQuery.of(context).size.height * 0.1,
                       child: Container(
                         color: secondaryColor,
                       ),
@@ -48,11 +56,13 @@ class LoginState extends State<Login>{
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.fiber_new_rounded, color: secondaryColor,size: 60),
+                      Icon(Icons.fiber_new_rounded,
+                          color: secondaryColor, size: 60),
                       RaisedButton(
                         color: secondaryColor,
-                        onPressed: (){},
-                        child: Text("New Mnemonic",style:TextStyle(color: Colors.white)),
+                        onPressed: () {},
+                        child: Text("New Mnemonic",
+                            style: TextStyle(color: Colors.white)),
                       ),
                     ],
                   ),
@@ -64,5 +74,4 @@ class LoginState extends State<Login>{
       ),
     );
   }
-
 }

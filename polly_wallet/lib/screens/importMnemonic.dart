@@ -6,10 +6,12 @@ import 'package:polly_wallet/utils/encryption.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:polly_wallet/widgets/loadingIndicator.dart';
 import 'dart:io';
-class ImportMnemonic extends StatefulWidget{
+
+class ImportMnemonic extends StatefulWidget {
   ImportMnemonicState createState() => ImportMnemonicState();
 }
-class ImportMnemonicState extends State<ImportMnemonic>{
+
+class ImportMnemonicState extends State<ImportMnemonic> {
   TextEditingController seed = new TextEditingController();
   TextEditingController pin = new TextEditingController();
   final GlobalKey<State> _keyLoader = new GlobalKey<State>();
@@ -29,9 +31,8 @@ class ImportMnemonicState extends State<ImportMnemonic>{
                 maxLines: null,
                 controller: seed,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
-                validator: (val) => val.split(" ").length==12
-                    ? null
-                    : 'Invalid Mnemonic',
+                validator: (val) =>
+                    val.split(" ").length == 12 ? null : 'Invalid Mnemonic',
                 decoration: InputDecoration(
                   labelText: "Mnemonic",
                   hintText: "Enter your Mnemonic",
@@ -42,13 +43,12 @@ class ImportMnemonicState extends State<ImportMnemonic>{
                 maxLength: 4,
                 controller: pin,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
-                validator: (val) => val.length==4
-                    ? null
-                    : 'PIN must be of 4 numbers',
+                validator: (val) =>
+                    val.length == 4 ? null : 'PIN must be of 4 numbers',
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                    labelText: "PIN",
-                    hintText: "Enter a PIN",
+                  labelText: "PIN",
+                  hintText: "Enter a PIN",
                 ),
               ),
               Row(
@@ -57,13 +57,11 @@ class ImportMnemonicState extends State<ImportMnemonic>{
                   RaisedButton(
                       color: secondaryColor,
                       child: Text("New Mnemonic"),
-                      onPressed: _newMnemonic
-                  ),
+                      onPressed: _newMnemonic),
                   RaisedButton(
-                    color: secondaryColor,
+                      color: secondaryColor,
                       child: Text("Continue"),
-                      onPressed: _proceed
-                  ),
+                      onPressed: _proceed),
                 ],
               )
             ],
@@ -72,8 +70,9 @@ class ImportMnemonicState extends State<ImportMnemonic>{
       ),
     );
   }
-  _proceed()async{
-    if(seed.text.split(" ").length!=12) {
+
+  _proceed() async {
+    if (seed.text.split(" ").length != 12) {
       Fluttertoast.showToast(
           msg: "Invalid Mnemonic",
           toastLength: Toast.LENGTH_SHORT,
@@ -81,12 +80,11 @@ class ImportMnemonicState extends State<ImportMnemonic>{
           timeInSecForIosWeb: 1,
           backgroundColor: Colors.red,
           textColor: Colors.white,
-          fontSize: 16.0
-      );
+          fontSize: 16.0);
 
       return;
     }
-    if(pin.text.length!=4){
+    if (pin.text.length != 4) {
       Fluttertoast.showToast(
           msg: "Invalid PIN",
           toastLength: Toast.LENGTH_SHORT,
@@ -94,22 +92,21 @@ class ImportMnemonicState extends State<ImportMnemonic>{
           timeInSecForIosWeb: 1,
           backgroundColor: Colors.red,
           textColor: Colors.white,
-          fontSize: 16.0
-      );
+          fontSize: 16.0);
       return;
     }
     Dialogs.showLoadingDialog(context, _keyLoader);
-    await Future.delayed(Duration(seconds: 1)).then((val)async{
-      var pkAddr = await  HDKey.generateKey(seed.text);
-      var encrypted = await  Encryptions.encrypt(seed.text, pkAddr[0], pin.text);
-      BoxUtils.setFirstAccount(encrypted[0], encrypted[1], pkAddr[1],encrypted[2]);
+    await Future.delayed(Duration(seconds: 1)).then((val) async {
+      var pkAddr = await HDKey.generateKey(seed.text);
+      var encrypted = await Encryptions.encrypt(seed.text, pkAddr[0], pin.text);
+      BoxUtils.setFirstAccount(
+          encrypted[0], encrypted[1], pkAddr[1], encrypted[2]);
     });
 
-    Navigator.of(_keyLoader.currentContext,rootNavigator: true).pop();
-
+    Navigator.of(_keyLoader.currentContext, rootNavigator: true).pop();
   }
-  _newMnemonic() async {
 
+  _newMnemonic() async {
     seed.text = HDKey.generateMnemonic();
   }
 }

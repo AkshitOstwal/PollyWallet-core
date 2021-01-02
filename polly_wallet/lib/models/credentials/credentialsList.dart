@@ -4,7 +4,6 @@ part 'credentialsList.g.dart';
 
 @HiveType(typeId: 2)
 class CredentialsList extends HiveObject {
-
   @HiveField(0)
   int active;
 
