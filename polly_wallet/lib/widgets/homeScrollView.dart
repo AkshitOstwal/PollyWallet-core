@@ -12,6 +12,28 @@ class HomeScrollView extends StatelessWidget{
           SizedBox(
             height: 20,
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0,0,0,25),
+                child: FlatButton(
+                  onPressed: (){},
+                  color: paleWhite,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width*0.8,
+                    child: ListTile(
+                      leading: Image(image: AssetImage(maticIcon)),
+                      isThreeLine: false,
+                      title: Text("New to Matic?", style: homeHeadingStyle,),
+                      subtitle: Text("Learn more about Matic Network."),
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
           Text("Supercharge your assets", style: homeHeadingStyle,),
           Padding(
             padding: const EdgeInsets.all(4.0),
@@ -47,7 +69,6 @@ class HomeScrollView extends StatelessWidget{
                           padding: const EdgeInsets.all(5.0),
                           child: Text("123 USD", style: homeHeadingStyle,),
                         ),
-                        SizedBox(height: 1,),
                         RaisedButton(
                           color: primaryColor,
                           onPressed: (){},
@@ -77,6 +98,94 @@ class HomeScrollView extends StatelessWidget{
           Divider(
             color: Colors.black54,
           ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0,10,0,0),
+            child: Text("Quick options", style: homeHeadingStyle,),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0,10,0,10),
+            child: FlatButton(
+              onPressed: (){
+
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Image(image: AssetImage(flash),),
+                      Text("Assets", style: homeMenuStyle,)
+                    ],
+                  ),
+                  Icon(Icons.arrow_forward_ios, color: Colors.black54,)
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0,10,0,10),
+            child: FlatButton(
+              onPressed: (){
+
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Image(image: AssetImage(flash),),
+                      Text("Collectibles", style: homeMenuStyle,)
+                    ],
+                  ),
+                  Icon(Icons.arrow_forward_ios, color: Colors.black54,)
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0,10,0,10),
+            child: FlatButton(
+              onPressed: (){
+
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Image(image: AssetImage(flash),),
+                      Text("All transactions", style: homeMenuStyle,)
+                    ],
+                  ),
+                  Icon(Icons.arrow_forward_ios, color: Colors.black54,)
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0,10,0,10),
+            child: FlatButton(
+              onPressed: (){
+
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Image(image: AssetImage(flash),),
+                      Text("Settings", style: homeMenuStyle,)
+                    ],
+                  ),
+                  Icon(Icons.arrow_forward_ios, color: Colors.black54,)
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );

@@ -14,7 +14,7 @@ class Dialogs {
               onWillPop: () async => false,
               child: SimpleDialog(
                   key: key,
-                  backgroundColor: offWhite,
+                  backgroundColor: bgWhite,
                   children: <Widget>[
                     Center(
                       child: Column(children: [

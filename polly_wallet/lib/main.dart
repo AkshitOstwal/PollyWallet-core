@@ -41,11 +41,11 @@ class _PollyWalletState extends State<PollyWallet> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-        systemNavigationBarColor: offWhite, // navigation bar color
+        systemNavigationBarColor: bgWhite, // navigation bar color
         statusBarColor: primaryColor,
         statusBarIconBrightness: Brightness.light,
         statusBarBrightness: Brightness.light,
-        systemNavigationBarDividerColor: offWhite,
+        systemNavigationBarDividerColor: bgWhite,
         systemNavigationBarIconBrightness: Brightness.dark // status bar color
         ));
     return MaterialApp(

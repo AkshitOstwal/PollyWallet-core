@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:polly_wallet/constants.dart';
 
 class SendReceiveButton extends StatelessWidget {
-  static const outlineColor = Colors.black54;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,7 +18,7 @@ class SendReceiveButton extends StatelessWidget {
                   borderRadius: BorderRadius.circular(100)),
               child: Text(
                 "Send",
-                style: TextStyle(fontSize: 10, color: offWhite),
+                style: TextStyle(fontSize: 10, color: bgWhite),
               ),
               onPressed: () {},
             ),
@@ -48,7 +47,7 @@ class SendReceiveButton extends StatelessWidget {
                   borderRadius: BorderRadius.circular(100)),
               child: Text(
                 "Receive",
-                style: TextStyle(fontSize: 10, color: offWhite),
+                style: TextStyle(fontSize: 10, color: bgWhite),
               ),
               onPressed: () {},
             ),

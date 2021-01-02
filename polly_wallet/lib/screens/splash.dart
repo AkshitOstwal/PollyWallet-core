@@ -5,7 +5,7 @@ class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: offWhite,
+      backgroundColor: bgWhite,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -45,10 +45,10 @@ class HomeState extends State<Home> {
             ),
             title: Text("Testnet"),
             leading:
-                Icon(Icons.account_circle_sharp, color: Colors.orangeAccent),
+                Icon(Icons.account_circle_sharp, color: Colors.black54),
             actions: [
               IconButton(
-                  icon: Icon(Icons.power_settings_new, color: Colors.black),
+                  icon: Icon(Icons.power_settings_new, color: Colors.black54),
                   onPressed: () {})
             ],
           ),
@@ -58,8 +58,8 @@ class HomeState extends State<Home> {
                 decoration: BoxDecoration(
                     borderRadius:
                         BorderRadius.vertical(top: Radius.circular(13)),
-                    color: offWhite),
-                height: 1000,
+                    color: bgWhite
+                ),
                 alignment: Alignment.center,
                 child: HomeScrollView(),
               ),
