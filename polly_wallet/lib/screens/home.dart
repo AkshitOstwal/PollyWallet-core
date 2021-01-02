@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:polly_wallet/widgets/homeScrollView.dart';
 import 'package:polly_wallet/widgets/sendReceive.dart';
 
 import '../constants.dart';
@@ -60,7 +61,7 @@ class HomeState extends State<Home> {
                     color: offWhite),
                 height: 1000,
                 alignment: Alignment.center,
-                child: Text('orange 20 '),
+                child: HomeScrollView(),
               ),
             ]),
           )
