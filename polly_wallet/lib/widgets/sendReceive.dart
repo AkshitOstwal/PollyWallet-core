@@ -49,7 +49,9 @@ class SendReceiveButton extends StatelessWidget {
                 "Receive",
                 style: TextStyle(fontSize: 10, color: bgWhite),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, receiveRoute);
+              },
             ),
           ),
         ],

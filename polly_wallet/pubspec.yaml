@@ -26,6 +26,7 @@ dependencies:
   bip32: any
   fluttertoast: ^7.1.6
   flutter_spinkit: "^4.1.2"
+  qr_flutter: ^3.1.0
 
 dev_dependencies:
   flutter_test:

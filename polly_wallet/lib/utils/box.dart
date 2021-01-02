@@ -41,4 +41,9 @@ class BoxUtils {
     print(box.getAt(0).credentials[0].address);
     return true;
   }
+  static Future<String> getAddress () async {
+    Box<CredentialsList> box = await Hive.openBox<CredentialsList>(credentialBox);
+    int active = box.getAt(0).active;
+    return box.getAt(0).credentials[active].address;
+  }
 }

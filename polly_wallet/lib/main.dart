@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:polly_wallet/constants.dart';
 import 'package:polly_wallet/screens/home.dart';
 import 'package:polly_wallet/screens/importMnemonic.dart';
+import 'package:polly_wallet/screens/receive.dart';
 
 import 'package:polly_wallet/screens/splash.dart';
 import 'package:polly_wallet/utils/box.dart';
@@ -54,8 +55,13 @@ class _PollyWalletState extends State<PollyWallet> {
         primarySwatch: Colors.orange,
         accentColor: primaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        platform: TargetPlatform.iOS,
       ),
-      routes: {importMnemonic: (context) => ImportMnemonic()},
+      routes: {
+        importMnemonic: (context) => ImportMnemonic(),
+        homeRoute :(context) => Home(),
+        receiveRoute : (context) => Receive(),
+      },
       home: Home(),
     );
   }
