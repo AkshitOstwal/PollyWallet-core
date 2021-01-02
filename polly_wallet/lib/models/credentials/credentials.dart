@@ -3,7 +3,6 @@ part 'credentials.g.dart';
 
 @HiveType(typeId: 0)
 class Credentials extends HiveObject {
-
   @HiveField(0)
   String mnemonic;
 
@@ -12,5 +11,4 @@ class Credentials extends HiveObject {
 
   @HiveField(2)
   String address;
-
 }
