@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:polly_wallet/widgets/sendReceive.dart';
 
 import '../constants.dart';
+import 'add_funds/add_funds.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -60,7 +61,17 @@ class HomeState extends State<Home> {
                     color: offWhite),
                 height: 1000,
                 alignment: Alignment.center,
-                child: Text('orange 20 '),
+                child: Column(
+                  children: [
+                    RaisedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (BuildContext context) => AddFunds()));
+                      },
+                      child: Text('to add funds'),
+                    ),
+                  ],
+                ),
               ),
             ]),
           )
