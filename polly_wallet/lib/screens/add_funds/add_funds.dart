@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:polly_wallet/screens/add_funds/assets.dart';
+import 'package:polly_wallet/screens/add_funds/empty_assets.dart';
 import 'package:polly_wallet/widgets/sendReceive.dart';
 
 import '../../constants.dart';
@@ -80,7 +81,9 @@ class AddFundsState extends State<AddFunds> {
                 },
               ),
             ),
-            SliverToBoxAdapter(child: Assets()),
+            SliverToBoxAdapter(
+              child: Assets(),
+            ), //use EmptyAssetScreen()
           ],
         ),
       ),
