@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:polly_wallet/screens/add_funds/assets.dart';
 import 'package:polly_wallet/widgets/sendReceive.dart';
 
 import '../../constants.dart';
@@ -39,97 +40,51 @@ class AddFundsState extends State<AddFunds> {
                   return FlexibleSpaceBar(
                     collapseMode: CollapseMode.parallax,
                     centerTitle: true,
+                    titlePadding: EdgeInsets.zero,
                     title: top > height
                         ? SizedBox(
                             width: MediaQuery.of(context).size.width * 0.8,
                             height: MediaQuery.of(context).size.height * 0.2,
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [AmountDisplay()],
+                              children: [
+                                Text(
+                                  'Testnet',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                AmountDisplay()
+                              ],
                             ),
                           )
-                        : SizedBox(),
+                        : Container(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Text(
+                                  'Testnet',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                Text(
+                                  '\$456.44',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 12),
+                                ),
+                                SizedBox(
+                                  height: 8,
+                                )
+                              ],
+                            ),
+                          ),
                   );
                 },
               ),
-              title: Text("Testnet"),
             ),
             SliverToBoxAdapter(child: Assets()),
           ],
         ),
       ),
     );
-  }
-}
-
-class Assets extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      constraints: BoxConstraints(minHeight: 500),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.vertical(top: Radius.circular(13)),
-          color: offWhite),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Assets",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                  FlatButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Hide small assets',
-                        style: TextStyle(color: Colors.blue),
-                      ))
-                ],
-              ),
-            ),
-            Column(children: getListItems(17)),
-          ],
-        ),
-      ),
-    );
-  }
-
-  List<Widget> getListItems(int count) {
-    List<Widget> _list = [];
-    for (var i = 0; i < count; i++) {
-      _list.add(ListTile(
-        leading: Image.network(
-          'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/ethereum/ethereum.png',
-        ),
-        trailing: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              '\$34.89',
-              style: TextStyle(
-                color: Colors.black,
-              ),
-            ),
-            Text(
-              '0.003',
-              style: TextStyle(color: Colors.grey, fontSize: 12),
-            ),
-          ],
-        ),
-        title: Text('Ethereum'),
-        subtitle: Text(
-          'ETH',
-          style: TextStyle(color: Colors.grey, fontSize: 12),
-        ),
-      ));
-    }
-    return _list;
   }
 }
 
@@ -140,6 +95,7 @@ class AmountDisplay extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             '\$456.44',
