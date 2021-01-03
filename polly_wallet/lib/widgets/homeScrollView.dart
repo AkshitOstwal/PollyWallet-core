@@ -9,6 +9,19 @@ class HomeScrollView extends StatelessWidget{
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 7,
+                width: MediaQuery.of(context).size.width*0.15,
+                decoration: BoxDecoration(
+                  color: Colors.black45,
+                  borderRadius: BorderRadius.circular(100),
+                ),
+              )
+            ],
+          ),
           SizedBox(
             height: 20,
           ),
@@ -137,6 +150,27 @@ class HomeScrollView extends StatelessWidget{
                     children: [
                       Image(image: AssetImage(flash),),
                       Text("Collectibles", style: homeMenuStyle,)
+                    ],
+                  ),
+                  Icon(Icons.arrow_forward_ios, color: Colors.black54,)
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0,10,0,10),
+            child: FlatButton(
+              onPressed: (){
+
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Image(image: AssetImage(flash),),
+                      Text("Stake", style: homeMenuStyle,)
                     ],
                   ),
                   Icon(Icons.arrow_forward_ios, color: Colors.black54,)

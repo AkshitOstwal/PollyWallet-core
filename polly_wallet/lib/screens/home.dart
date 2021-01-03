@@ -16,6 +16,7 @@ class HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: primaryColor,
       body: CustomScrollView(
+        physics: ClampingScrollPhysics(),
         slivers: [
           SliverAppBar(
             backgroundColor: primaryColor,
