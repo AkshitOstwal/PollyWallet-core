@@ -84,7 +84,7 @@ class HomeScrollView extends StatelessWidget{
                         ),
                         RaisedButton(
                           color: primaryColor,
-                          onPressed: (){},
+                          onPressed: (){Navigator.pushNamed(context, addFundRoute);},
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
                           child: Text("Transfer to Matic"),
                         ),

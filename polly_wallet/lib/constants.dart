@@ -12,6 +12,8 @@ const importMnemonic = "importMnemonic";
 const credentialBox = "credentialBox";
 const homeRoute = "homeRoute";
 const receiveRoute = "receiveRoute";
+const addFundRoute = "addFund";
+
 const homeHeadingStyle = TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black87);
 const homeTextStyle = TextStyle(fontSize: 15, fontWeight: FontWeight.normal, color: Colors.black54);
 const homeMenuStyle = TextStyle(fontSize: 18, fontWeight: FontWeight.normal, color: Colors.black87);
