@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:polly_wallet/screens/add_funds/deposit.dart';
 import 'package:polly_wallet/widgets/sendReceive.dart';
 
 import '../constants.dart';
@@ -69,6 +70,14 @@ class HomeState extends State<Home> {
                             builder: (BuildContext context) => AddFunds()));
                       },
                       child: Text('to add funds'),
+                    ),
+                    RaisedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                DepositScreen()));
+                      },
+                      child: Text('Deposit screen'),
                     ),
                   ],
                 ),
