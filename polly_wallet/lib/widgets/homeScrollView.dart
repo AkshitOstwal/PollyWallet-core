@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:polly_wallet/constants.dart';
+import 'package:polly_wallet/test.dart';
 class HomeScrollView extends StatelessWidget{
   @override
   Widget build (BuildContext context){
@@ -140,7 +141,7 @@ class HomeScrollView extends StatelessWidget{
             padding: const EdgeInsets.fromLTRB(0,10,0,10),
             child: FlatButton(
               onPressed: (){
-
+                TestClass.TestFunc();
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
