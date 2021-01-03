@@ -5,7 +5,6 @@ import 'package:polly_wallet/utils/box.dart';
 import 'package:polly_wallet/utils/encryption.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:polly_wallet/widgets/loadingIndicator.dart';
-import 'dart:io';
 
 class ImportMnemonic extends StatefulWidget {
   ImportMnemonicState createState() => ImportMnemonicState();
@@ -20,7 +19,7 @@ class ImportMnemonicState extends State<ImportMnemonic> {
   Widget build(BuildContext context) {
     this.context = context;
     return Scaffold(
-      backgroundColor: offWhite,
+      backgroundColor: bgWhite,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(15.0),

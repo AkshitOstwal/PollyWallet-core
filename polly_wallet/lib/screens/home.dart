@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:polly_wallet/screens/add_funds/deposit.dart';
+import 'package:polly_wallet/widgets/homeScrollView.dart';
 import 'package:polly_wallet/widgets/sendReceive.dart';
 
 import '../constants.dart';
@@ -17,6 +18,7 @@ class HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: primaryColor,
       body: CustomScrollView(
+        physics: ClampingScrollPhysics(),
         slivers: [
           SliverAppBar(
             backgroundColor: primaryColor,
@@ -46,10 +48,10 @@ class HomeState extends State<Home> {
             ),
             title: Text("Testnet"),
             leading:
-                Icon(Icons.account_circle_sharp, color: Colors.orangeAccent),
+                Icon(Icons.account_circle_sharp, color: Colors.black54),
             actions: [
               IconButton(
-                  icon: Icon(Icons.power_settings_new, color: Colors.black),
+                  icon: Icon(Icons.power_settings_new, color: Colors.black54),
                   onPressed: () {})
             ],
           ),
@@ -59,28 +61,11 @@ class HomeState extends State<Home> {
                 decoration: BoxDecoration(
                     borderRadius:
                         BorderRadius.vertical(top: Radius.circular(13)),
-                    color: offWhite),
-                height: 1000,
-                alignment: Alignment.center,
-                child: Column(
-                  children: [
-                    RaisedButton(
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (BuildContext context) => AddFunds()));
-                      },
-                      child: Text('to add funds'),
-                    ),
-                    RaisedButton(
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                DepositScreen()));
-                      },
-                      child: Text('Deposit screen'),
-                    ),
-                  ],
+                    color: bgWhite
                 ),
+                alignment: Alignment.center,
+
+                child: HomeScrollView(),
               ),
             ]),
           )

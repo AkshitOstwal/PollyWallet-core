@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:polly_wallet/constants.dart';
-import 'package:polly_wallet/utils/hexConverter.dart';
 
 class Login extends StatefulWidget {
   LoginState createState() => LoginState();
@@ -11,7 +10,7 @@ class LoginState extends State<Login> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      backgroundColor: offWhite,
+      backgroundColor: bgWhite,
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

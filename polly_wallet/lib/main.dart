@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:polly_wallet/constants.dart';
 import 'package:polly_wallet/screens/home.dart';
 import 'package:polly_wallet/screens/importMnemonic.dart';
+import 'package:polly_wallet/screens/receive.dart';
 
 import 'package:polly_wallet/screens/splash.dart';
 import 'package:polly_wallet/utils/box.dart';
@@ -41,11 +42,11 @@ class _PollyWalletState extends State<PollyWallet> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-        systemNavigationBarColor: offWhite, // navigation bar color
+        systemNavigationBarColor: bgWhite, // navigation bar color
         statusBarColor: primaryColor,
         statusBarIconBrightness: Brightness.light,
         statusBarBrightness: Brightness.light,
-        systemNavigationBarDividerColor: offWhite,
+        systemNavigationBarDividerColor: bgWhite,
         systemNavigationBarIconBrightness: Brightness.dark // status bar color
         ));
     return MaterialApp(
@@ -54,8 +55,13 @@ class _PollyWalletState extends State<PollyWallet> {
         primarySwatch: Colors.orange,
         accentColor: primaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        platform: TargetPlatform.iOS,
       ),
-      routes: {importMnemonic: (context) => ImportMnemonic()},
+      routes: {
+        importMnemonic: (context) => ImportMnemonic(),
+        homeRoute :(context) => Home(),
+        receiveRoute : (context) => Receive(),
+      },
       home: Home(),
     );
   }
