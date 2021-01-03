@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:polly_wallet/utils/hexConverter.dart';
 
 
-const Color primaryColor = Colors.blue;
+Color primaryColor = HexColor("#003CB2");
 const Color secondaryColor = Colors.blueGrey;
 const Color bgWhite = Colors.white;
 const Color paleWhite = Colors.black12;

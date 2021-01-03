@@ -51,6 +51,7 @@ class _PollyWalletState extends State<PollyWallet> {
         systemNavigationBarIconBrightness: Brightness.dark // status bar color
         ));
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.orange,
