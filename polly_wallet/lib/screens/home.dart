@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:polly_wallet/screens/add_funds/deposit.dart';
 import 'package:polly_wallet/widgets/homeScrollView.dart';
 import 'package:polly_wallet/widgets/sendReceive.dart';
 
 import '../constants.dart';
+import 'add_funds/add_funds.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -62,6 +64,7 @@ class HomeState extends State<Home> {
                     color: bgWhite
                 ),
                 alignment: Alignment.center,
+
                 child: HomeScrollView(),
               ),
             ]),
