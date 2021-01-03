@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:polly_wallet/constants.dart';
-class HomeScrollView extends StatelessWidget{
+import 'package:polly_wallet/screens/transaction/transaction_history.dart';
+
+class HomeScrollView extends StatelessWidget {
   @override
-  Widget build (BuildContext context){
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Column(
@@ -14,7 +16,7 @@ class HomeScrollView extends StatelessWidget{
             children: [
               Container(
                 height: 7,
-                width: MediaQuery.of(context).size.width*0.15,
+                width: MediaQuery.of(context).size.width * 0.15,
                 decoration: BoxDecoration(
                   color: Colors.black45,
                   borderRadius: BorderRadius.circular(100),
@@ -29,17 +31,21 @@ class HomeScrollView extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(0,0,0,25),
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 25),
                 child: FlatButton(
-                  onPressed: (){},
+                  onPressed: () {},
                   color: paleWhite,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
                   child: SizedBox(
-                    width: MediaQuery.of(context).size.width*0.8,
+                    width: MediaQuery.of(context).size.width * 0.8,
                     child: ListTile(
                       leading: Image(image: AssetImage(maticIcon)),
                       isThreeLine: false,
-                      title: Text("New to Matic?", style: homeHeadingStyle,),
+                      title: Text(
+                        "New to Matic?",
+                        style: homeHeadingStyle,
+                      ),
                       subtitle: Text("Learn more about Matic Network."),
                     ),
                   ),
@@ -47,10 +53,16 @@ class HomeScrollView extends StatelessWidget{
               )
             ],
           ),
-          Text("Supercharge your assets", style: homeHeadingStyle,),
+          Text(
+            "Supercharge your assets",
+            style: homeHeadingStyle,
+          ),
           Padding(
             padding: const EdgeInsets.all(4.0),
-            child: Text("Transfer Ethereum assets to Matic Network", style: homeTextStyle,),
+            child: Text(
+              "Transfer Ethereum assets to Matic Network",
+              style: homeTextStyle,
+            ),
           ),
           SizedBox(
             height: 168,
@@ -68,7 +80,6 @@ class HomeScrollView extends StatelessWidget{
                         Image(image: AssetImage(downIcon)),
                         Image(image: AssetImage(downIcon)),
                         Image(image: AssetImage(maticIcon)),
-
                       ],
                     ),
                   ),
@@ -77,15 +88,22 @@ class HomeScrollView extends StatelessWidget{
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text("Your funds on Ethereum Network", style: homeTextStyle,),
+                        Text(
+                          "Your funds on Ethereum Network",
+                          style: homeTextStyle,
+                        ),
                         Padding(
                           padding: const EdgeInsets.all(5.0),
-                          child: Text("123 USD", style: homeHeadingStyle,),
+                          child: Text(
+                            "123 USD",
+                            style: homeHeadingStyle,
+                          ),
                         ),
                         RaisedButton(
                           color: primaryColor,
-                          onPressed: (){},
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(100)),
                           child: Text("Transfer to Matic"),
                         ),
                       ],
@@ -102,87 +120,114 @@ class HomeScrollView extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(0,0,10,2),
-                child: Image(image: AssetImage(shield),),
+                padding: const EdgeInsets.fromLTRB(0, 0, 10, 2),
+                child: Image(
+                  image: AssetImage(shield),
+                ),
               ),
-              Text("Secure fast and trusted by Ethereum", style: homeTextStyle,)
+              Text(
+                "Secure fast and trusted by Ethereum",
+                style: homeTextStyle,
+              )
             ],
           ),
           Divider(
             color: Colors.black54,
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(0,10,0,0),
-            child: Text("Quick options", style: homeHeadingStyle,),
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+            child: Text(
+              "Quick options",
+              style: homeHeadingStyle,
+            ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(0,10,0,10),
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
             child: FlatButton(
-              onPressed: (){
-
-              },
+              onPressed: () {},
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Image(image: AssetImage(flash),),
-                      Text("Assets", style: homeMenuStyle,)
+                      Image(
+                        image: AssetImage(flash),
+                      ),
+                      Text(
+                        "Assets",
+                        style: homeMenuStyle,
+                      )
                     ],
                   ),
-                  Icon(Icons.arrow_forward_ios, color: Colors.black54,)
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.black54,
+                  )
                 ],
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(0,10,0,10),
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
             child: FlatButton(
-              onPressed: (){
-
-              },
+              onPressed: () {},
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Image(image: AssetImage(flash),),
-                      Text("Collectibles", style: homeMenuStyle,)
+                      Image(
+                        image: AssetImage(flash),
+                      ),
+                      Text(
+                        "Collectibles",
+                        style: homeMenuStyle,
+                      )
                     ],
                   ),
-                  Icon(Icons.arrow_forward_ios, color: Colors.black54,)
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.black54,
+                  )
                 ],
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(0,10,0,10),
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
             child: FlatButton(
-              onPressed: (){
-
-              },
+              onPressed: () {},
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Image(image: AssetImage(flash),),
-                      Text("Stake", style: homeMenuStyle,)
+                      Image(
+                        image: AssetImage(flash),
+                      ),
+                      Text(
+                        "Stake",
+                        style: homeMenuStyle,
+                      )
                     ],
                   ),
-                  Icon(Icons.arrow_forward_ios, color: Colors.black54,)
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.black54,
+                  )
                 ],
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(0,10,0,10),
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
             child: FlatButton(
-              onPressed: (){
-
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => TransactionHistory()));
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -190,32 +235,46 @@ class HomeScrollView extends StatelessWidget{
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Image(image: AssetImage(flash),),
-                      Text("All transactions", style: homeMenuStyle,)
+                      Image(
+                        image: AssetImage(flash),
+                      ),
+                      Text(
+                        "All transactions",
+                        style: homeMenuStyle,
+                      )
                     ],
                   ),
-                  Icon(Icons.arrow_forward_ios, color: Colors.black54,)
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.black54,
+                  )
                 ],
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(0,10,0,10),
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
             child: FlatButton(
-              onPressed: (){
-
-              },
+              onPressed: () {},
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Image(image: AssetImage(flash),),
-                      Text("Settings", style: homeMenuStyle,)
+                      Image(
+                        image: AssetImage(flash),
+                      ),
+                      Text(
+                        "Settings",
+                        style: homeMenuStyle,
+                      )
                     ],
                   ),
-                  Icon(Icons.arrow_forward_ios, color: Colors.black54,)
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.black54,
+                  )
                 ],
               ),
             ),
