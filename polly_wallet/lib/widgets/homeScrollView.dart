@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:polly_wallet/constants.dart';
 import 'package:polly_wallet/screens/transaction/transaction_history.dart';
-
-class HomeScrollView extends StatelessWidget {
+import 'package:polly_wallet/test.dart';
+class HomeScrollView extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -101,9 +101,8 @@ class HomeScrollView extends StatelessWidget {
                         ),
                         RaisedButton(
                           color: primaryColor,
-                          onPressed: () {},
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(100)),
+                          onPressed: (){Navigator.pushNamed(context, addFundRoute);},
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
                           child: Text("Transfer to Matic"),
                         ),
                       ],
@@ -171,7 +170,9 @@ class HomeScrollView extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
             child: FlatButton(
-              onPressed: () {},
+              onPressed: (){
+                TestClass.TestFunc();
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:polly_wallet/screens/add_funds/assets.dart';
-import 'package:polly_wallet/screens/add_funds/empty_assets.dart';
-import 'package:polly_wallet/widgets/sendReceive.dart';
 
 import '../../constants.dart';
 
@@ -26,6 +24,7 @@ class AddFundsState extends State<AddFunds> {
       backgroundColor: primaryColor,
       body: Container(
         child: CustomScrollView(
+          physics: ClampingScrollPhysics(),
           controller: _scrollController,
           slivers: [
             SliverAppBar(
@@ -117,7 +116,7 @@ class AmountDisplay extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.20,
+                width: MediaQuery.of(context).size.width * 0.25,
                 child: OutlineButton(
                   borderSide: BorderSide(color: outlineColor),
                   shape: RoundedRectangleBorder(
@@ -132,7 +131,7 @@ class AmountDisplay extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.19,
+                width: MediaQuery.of(context).size.width * 0.25,
                 child: OutlineButton(
                   borderSide: BorderSide(color: outlineColor),
                   shape: RoundedRectangleBorder(

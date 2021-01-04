@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:polly_wallet/constants.dart';
+import 'package:polly_wallet/screens/add_funds/add_funds.dart';
 import 'package:polly_wallet/screens/home.dart';
 import 'package:polly_wallet/screens/importMnemonic.dart';
 import 'package:polly_wallet/screens/receive.dart';
@@ -50,6 +51,7 @@ class _PollyWalletState extends State<PollyWallet> {
         systemNavigationBarIconBrightness: Brightness.dark // status bar color
         ));
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.orange,
@@ -61,6 +63,7 @@ class _PollyWalletState extends State<PollyWallet> {
         importMnemonic: (context) => ImportMnemonic(),
         homeRoute :(context) => Home(),
         receiveRoute : (context) => Receive(),
+        addFundRoute : (context) => AddFunds(),
       },
       home: Home(),
     );
